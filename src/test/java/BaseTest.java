@@ -22,7 +22,6 @@ public class BaseTest {
 
     WebDriver driver;
     WebDriverWait wait;
-    Actions actions;
     LoginPage loginPage;
     ExtentReports extent;
     ExtentHtmlReporter htmlReporter;
@@ -42,7 +41,6 @@ public class BaseTest {
         options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        actions = new Actions(driver);
         driver.get("https://mail.google.com/");
         logger = extent.createTest(m.getName());
     }
